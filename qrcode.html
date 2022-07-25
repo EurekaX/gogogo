@@ -187,19 +187,20 @@
         document.getElementById('div_timer').innerText = new Date().format('MM-dd\t\t\thh:mm:ss')
     }, 1000)
 
+
+    const params = new URLSearchParams(location.search)
+
     let qrColor
     if (params.get('isJx')) {
         $('#div_yfx').show()
         $('#div_bt').text('销假进校二维码')
         $('#div_ewm_p').addClass('jx')
-        $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
         qrColor = '#4EB16E'
     }
     else {
         $('#div_bt').text('请假出校二维码')
         $('#div_ewm_p').addClass('cx')
         qrColor = '#4e6ab1'
- 
     }
 
     $('#div_xm').text('张晓敏' + ' ' + '20201220070')
@@ -237,4 +238,3 @@
 
 </body>
 </html>
-

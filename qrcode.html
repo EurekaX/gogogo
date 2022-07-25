@@ -233,12 +233,12 @@
     const url = 'https://nya.fish/rick#123456789012345678901234567890qwertyuiop'
     $('#div_ewm').html(createQrCode(url, qrColor))
 
-//     const date = new Date()
-//     date.setMinutes(0)
-//     date.setHours(8)
-//     const startTime = date.format('yyyy-MM-dd hh:mm')
-//     date.setHours(23)
-//     const endTime = date.format('yyyy-MM-dd hh:mm')
+    const date = new Date()
+    date.setMinutes(0)
+    date.setHours(8)
+    const startTime = date.format('yyyy-MM-dd hh:mm')
+    date.setHours(23)
+    const endTime = date.format('yyyy-MM-dd hh:mm')
 
     $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
 

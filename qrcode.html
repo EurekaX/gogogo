@@ -218,14 +218,25 @@
     const url = 'https://nya.fish/rick#123456789012345678901234567890qwertyuiop'
     $('#div_ewm').html(createQrCode(url, qrColor))
 
-    const date = new Date()
+   
+    if (params.get('isJx')) {
+         const date = new Date()
+    date.setMinutes(0)
+    date.setHours(0)
+    const startTime = date.format('yyyy-MM-dd hh:mm')
+    date.setHours(23)
+    const endTime = date.format('yyyy-MM-dd hh:mm')
+        $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
+    }else{
+        const date = new Date()
     date.setMinutes(0)
     date.setHours(date.getHours() - 1)
     const startTime = date.format('yyyy-MM-dd hh:mm')
     date.setHours(date.getHours() + 2)
     const endTime = date.format('yyyy-MM-dd hh:mm')
-
-    $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
+        $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
+    }
+    
 
     $('#div_yfx_button').click(() => {
         if (confirm('确定要进校吗？')) {

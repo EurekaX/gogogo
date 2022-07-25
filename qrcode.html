@@ -225,8 +225,9 @@
     date.setHours(0)
     const startTime = date.format('yyyy-MM-dd hh:mm')
     date.setHours(23)
+    date.setMinutes(59)
     const endTime = date.format('yyyy-MM-dd hh:mm')
-        $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
+    $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
     }else{
         const date = new Date()
     date.setMinutes(0)

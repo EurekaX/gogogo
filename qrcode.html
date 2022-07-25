@@ -189,18 +189,17 @@
 
 
     const params = new URLSearchParams(location.search)
-
+    const date = new Date()
+    date.setMinutes(0)
+    date.setHours(0)
+    const startTime = date.format('yyyy-MM-dd hh:mm')
+    date.setHours(23)
+    const endTime = date.format('yyyy-MM-dd hh:mm')
     let qrColor
     if (params.get('isJx')) {
         $('#div_yfx').show()
         $('#div_bt').text('销假进校二维码')
         $('#div_ewm_p').addClass('jx')
-        const date = new Date()
-        date.setMinutes(0)
-        date.setHours(0)
-        const startTime = date.format('yyyy-MM-dd hh:mm')
-        date.setHours(23)
-        const endTime = date.format('yyyy-MM-dd hh:mm')
         $('#div_yxsj').html('有效时间：' + startTime + '至' + endTime)
         qrColor = '#4EB16E'
     }
